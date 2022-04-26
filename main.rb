@@ -79,7 +79,7 @@ class Game
     end
 
     puts "Player 1 is X's, Player 2 is O's"
-    loop
+    while true do
         player1_turn.new
         player2_turn.new
     end
