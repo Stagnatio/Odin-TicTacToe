@@ -10,7 +10,7 @@ class Game
 
         @board[@@row][@@column] = "X"
         puts @board
-        wincheck1.new
+        wincheck1
     end
 
     def player2_turn
@@ -22,7 +22,7 @@ class Game
 
         @board[@@row][@@column] = "O"
         puts @board
-        wincheck2.new
+        wincheck2
     end
 
     def wincheck1
@@ -80,8 +80,8 @@ class Game
 
     puts "Player 1 is X's, Player 2 is O's"
     while true do
-        player1_turn.new
-        player2_turn.new
+        player1_turn
+        player2_turn
     end
 end
 
