@@ -1,73 +1,73 @@
 class Game
-    @board = Array.new(3){Array.new(3)}
+    @board = Array.new(3){Array.new(3, :e)}
 
-    def player1_turn
+    def self.player1_turn
         puts "Player 1's Turn."
         puts "Pick a row:"
-        gets @@row
+        @@row = gets
         puts "Pick a column:"
-        gets @@column
+        @@column = gets
 
-        @board[@@row][@@column] = "X"
+        @board[@@row][@@column] = :x
         puts @board
         wincheck1
     end
 
-    def player2_turn
+    def self.player2_turn
         puts "Player 2's Turn."
         puts "Pick a row:"
-        gets @@row
+        @@row = gets
         puts "Pick a column:"
-        gets @@column
+        @@column = gets
 
-        @board[@@row][@@column] = "O"
+        @board[@@row][@@column] = :o
         puts @board
         wincheck2
     end
 
-    def wincheck1
+    def self.wincheck1
         for i in 0..2
             # Check rows
-            if @board[i][0] == "X" && @board[i][1] == "X" && @board[i][2] == "X"
+            if @board[i][0] == :x && @board[i][1] == :x && @board[i][2] == :x
                 puts "Player 1 Wins!"
                 exit
             end
             # Check columns
-            if @board[0][i] == "X" && @board[1][i] == "X" && @board[2][i] == "X"
+            if @board[0][i] == :x && @board[1][i] == :x && @board[2][i] == :x
                 puts "Player 1 Wins!"
                 exit
             end
         end
         # Check diagonals
-        if @board[0][0] == "X" && @board[1][1] == "X" && @board[2][2] == "X"
+        if @board[0][0] == :x && @board[1][1] == :x && @board[2][2] == :x
             puts "Player 1 Wins!"
             exit
         end
-        if @board[0][2] == "X" && @board[1][1] == "X" && @board[2][0] == "X"
+        if @board[0][2] == :x && @board[1][1] == :x && @board[2][0] == :x
             puts "Player 1 Wins!"
             exit
         end
     end
 
-    def wincheck2
+    def self.wincheck2
         for i in 0..2
             # Check rows
-            if @board[i][0] == "O" && @board[i][1] == "O" && @board[i][2] == "O"
+            if @board[i][0] == :o && @board[i][1] == :o && @board[i][2] == :o
                 puts "Player 2 Wins!"
                 exit
             end
             # Check columns
-            if @board[0][i] == "O" && @board[1][i] == "O" && @board[2][i] == "O"
+            if @board[0][i] == :o && @board[1][i] == :o && @board[2][i] == :o
                 puts "Player 2 Wins!"
                 exit
             end
         end
         # Check diagonals
-        if @board[0][0] == "O" && @board[1][1] == "O" && @board[2][2] == "O"
+        if @board[0][0] == :o && @board[1][1] == :o && @board[2][2] == :o
             puts "Player 2 Wins!"
             exit
         end
-        if @board[0][2] == "O" && @board[1][1] == "O" && @board[2][0] == "O"
+        if @board[0][2] == :o && @board[1][1] == :o && @board[2][0] == :o
             puts "Player 2 Wins!"
             exit
         end
