@@ -6,7 +6,7 @@ class Game
         puts "Pick a row:"
         @@row = gets.to_i
         puts "Pick a column:"
-        @@column = gets.to_t
+        @@column = gets.to_i
 
         @board[@@row][@@column] = :x
         puts @board
