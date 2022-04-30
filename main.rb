@@ -72,10 +72,10 @@ class Game
             exit
         end
         # Check for draw
-        if @board.all? {|val| val != ""}
-            puts "Draw!"
-            exit
-        end
+        #if @board.all? {|val| val != ""}
+        #    puts "Draw!"
+        #    exit
+        #end
     end
 
     puts "Player 1 is X's, Player 2 is O's"
