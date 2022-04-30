@@ -16,9 +16,9 @@ class Game
     def self.player2_turn
         puts "Player 2's Turn."
         puts "Pick a row:"
-        @@row = gets.to_t
+        @@row = gets.to_i
         puts "Pick a column:"
-        @@column = gets.to_t
+        @@column = gets.to_i
 
         @board[@@row][@@column] = :o
         puts @board
